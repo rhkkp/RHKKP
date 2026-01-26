@@ -1,0 +1,113 @@
+ body {
+  margin: 0;
+  background: rgba(12, 12, 12, 0.93);
+  color: gold;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 10px;
+  border-bottom: 2px solid gold;
+  text-align: center;
+}
+
+marquee {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+section {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.video-grid,
+.categories-grid,
+.candidates-grid,
+.legal-grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.category-card,
+.candidate-card,
+.lawyer-card {
+  border: 2px solid gold;
+  padding: 10px;
+  min-width: 200px;
+  text-align: center;
+  background: #111;
+}
+
+button {
+  margin-top: 8px;
+  padding: 6px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+}
+
+/* Voting fuel bar */
+.fuel-level {
+  display: flex;
+  gap: 4px;
+  margin: 10px 0;
+}
+.fuel-level span {
+  flex: 1;
+  height: 12px;
+  background: #222;
+  opacity: 0.3;
+  border-radius: 4px;
+}
+.fuel-level .red { background: red; }
+.fuel-level .yellow { background: yellow; }
+.fuel-level .green { background: green; }
+
+.fuel-level.red-active .red { opacity: 1; box-shadow: 0 0 8px red; }
+.fuel-level.yellow-active .yellow { opacity: 1; box-shadow: 0 0 8px yellow; }
+.fuel-level.green-active .green { opacity: 1; box-shadow: 0 0 8px green; } 
+.banner-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 200px; /* thin banner height */
+  position: relative;
+}
+
+.banner-slider img {
+  min-width: 100%;
+  height: 200px;
+  object-fit: cover; /* landscape photo fit */
+  animation: slide 15s linear infinite;
+}
+
+/* simple auto scroll animation */
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}/* Disable image selection & dragging */
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Enable click only where needed (videos / buttons) */
+a img {
+  pointer-events: auto;
+}

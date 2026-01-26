@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RHKKP Talent Show</title>
+  <link rel="stylesheet" href="style.css">
+</head> 
+
+<body>
+
+<header>
+  <div class="banner-slider">
+    <img src="https://via.placeholder.com/1920x200" alt="Banner 1">
+    <img src="https://via.placeholder.com/1920x200" alt="Banner 2">
+    <img src="https://via.placeholder.com/1920x200" alt="Banner 3">
+  </div> 
+</header>
+
+<section>
+  <h2>Highlights</h2>
+  <div class="video-grid">
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+    <a href="https://www.youtube.com" target="_self"><img src="https://via.placeholder.com/400x250"></a>
+  </div>
+</section>
+
+<section>
+  <h2>Registrations</h2>
+  
+  <div style="background: #222; padding: 20px; border-radius: 10px; margin-bottom: 20px; color: white; text-align: center;">
+    <h3>Fill Registration Form</h3>
+    <form id="talentForm" style="display: flex; flex-direction: column; max-width: 400px; gap: 15px; margin: auto;">
+      <input type="text" id="userName" placeholder="Enter Your Name" required style="padding: 12px; border-radius: 5px; border: none;">
+      <select id="userCategory" style="padding: 12px; border-radius: 5px; border: none;">
+        <option value="Singing">Singing</option>
+        <option value="Dance">Dance</option>
+        <option value="Acting">Acting</option>
+        <option value="Mimicry">Mimicry</option>
+        <option value="Instrument">Instrument</option>
+        <option value="Puppet Show">Puppet Show</option>
+        <option value="Magic">Magic</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Poetry">Poetry</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit" style="padding: 12px; background: #ffd700; border: none; font-weight: bold; cursor: pointer; border-radius: 5px;">SUBMIT DATA</button>
+    </form>
+  </div>
+
+  <div class="categories-grid">
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Singing</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Dance</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Acting</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Mimicry</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Instrument</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Puppet Show</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Magic</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Comedy</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Poetry</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/300x200"><p>Other</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Selected Candidates</h2>
+  <div class="candidates-grid">
+    <div class="candidate-card">
+      <img src="https://via.placeholder.com/300x300">
+      <div class="fuel-level" data-votes="0">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
+      <button onclick="vote(this)">Vote</button>
+    </div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+    <div class="candidate-card"><img src="https://via.placeholder.com/300x300"><div class="fuel-level" data-votes="0"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><button onclick="vote(this)">Vote</button></div>
+  </div>
+</section>
+
+<section>
+  <h2>Legal Department</h2>
+  <div class="legal-grid">
+    <div class="lawyer-card"><img src="https://via.placeholder.com/200x200"><p>Lawyer 1</p></div>
+    <div class="lawyer-card"><img src="https://via.placeholder.com/200x200"><p>Lawyer 2</p></div>
+    <div class="lawyer-card"><img src="https://via.placeholder.com/200x200"><p>Lawyer 3</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>Email: helprhkkp.com</p>
+  <p>Phone: +91 62845 42086 </p>
+  <p>Phone: +91 88727 94862 </p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
