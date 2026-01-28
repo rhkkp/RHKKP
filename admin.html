@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>RH Admin Panel</title>
+    <style>
+        body { background: #000; color: gold; font-family: sans-serif; padding: 40px; }
+        .box { border: 1px solid gold; padding: 20px; margin-bottom: 20px; background: #111; }
+        input { padding: 10px; margin: 10px 0; width: 100%; }
+        button { background: gold; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>RH ADMIN CONTROL</h1>
+    <div class="box">
+        <h3>Update Candidate</h3>
+        <input type="text" id="candName" placeholder="Name">
+        <input type="number" id="candVotes" placeholder="Votes">
+        <button onclick="updateData('/admin/update-candidate', 'candName', 'candVotes')">UPDATE CANDIDATE</button>
+    </div>
+    <div class="box">
+        <h3>Update Legal Dept</h3>
+        <input type="text" id="lawyerName" placeholder="Lawyer Name">
+        <button onclick="updateData('/admin/update-legal', 'lawyerName')">UPDATE LEGAL</button>
+    </div>
+
+  <div class="box">
+        <h3>Upload New MP3 Song</h3>
+        <input type="text" id="songTitle" placeholder="Song Title">
+        <input type="file" id="songFile" accept="audio/mp3">
+        <button onclick="uploadSong()">UPLOAD MP3 NOW</button>
+    </div>
+
+    <script>
+        // 1. MP3 Song Upload karan wala function
+        async function uploadSong() {
+            const fileInput = document.getElementById('songFile');
+            const titleInput = document.getElementById('songTitle');
+
+            if (fileInput.files.length === 0) {
+                return alert("Paji, pehla MP3 file select karo!");
+            }
+
+            const formData = new FormData();
+            formData.append('title', titleInput.value || fileInput.files[0].name);
+            formData.append('songFile', fileInput.files[0]);
+
+            try {
+                const res = await fetch('/admin/upload-song', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await res.json();
+                
+                if (res.ok) {
+                    alert("✅ Success: " + result.message);
+                    titleInput.value = ''; 
+                    fileInput.value = '';  
+                } else {
+                    alert("❌ Error: " + result.message);
+                }
+            } catch (err) {
+                console.error(err);
+                alert("❌ Upload Failed! Backend check karo.");
+            }
+        }
+
+        // Je tuhada koi purana function (Candidate update wala) hai, taan oh isde thalle paste kar sakde ho.
+    </script>
+</body>
+</html>
